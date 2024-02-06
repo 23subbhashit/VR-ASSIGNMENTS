@@ -56,7 +56,31 @@ In computer vision libraries like OpenCV, the warpPerspective function is often 
 
 In summary, SIFT is a feature detection algorithm, BF Matcher is used for exhaustive feature matching, RANSAC is an algorithm for robust parameter estimation, the Homography Matrix describes the geometric transformation between images, and Warping applies the transformation to create a stitched panorama. These concepts are integral to image stitching and computer vision applications.
 
+## Explain how SURF descriptor is different from SIFT?
 
+### (Scale-Invariant Feature Transform):
+
+- Scale Invariance: SIFT is designed to be scale-invariant, meaning it can detect and describe features across different scales in an image.
+
+- Rotation Invariance: It is also rotation-invariant, allowing it to identify keypoints regardless of the image's orientation.
+
+- Keypoint Detection: SIFT uses a Difference of Gaussians (DoG) to identify potential keypoints in the image.
+
+- Descriptor Calculation: Once keypoints are identified, SIFT computes descriptors based on gradient orientations, creating a representation that is robust to changes in scale and rotation.
+
+- Robustness: SIFT is known for its robustness in various lighting conditions and under different viewing perspectives.
+
+### SURF (Speeded-Up Robust Features):
+
+- Speed Improvement: SURF is designed for speed, using integral images and Haar wavelets to accelerate both feature detection and descriptor calculation.
+
+- Box Filters: SURF utilizes box filters to approximate the Gaussian filters used in SIFT, contributing to its computational efficiency.
+
+- Orientation Assignment: SURF uses the sum of Haar wavelet responses for orientation assignment, achieving faster computation compared to SIFT.
+
+- Interest Points: SURF identifies interest points based on the determinant of the Hessian matrix, allowing for faster keypoint detection.
+
+- Approximations: While sacrificing some level of theoretical robustness, SURF approximates certain computations, making it well-suited for real-time applications where speed is crucial.
 
 
 
